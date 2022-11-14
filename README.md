@@ -14,9 +14,9 @@ Builds out a cluster on Linode for kubernetes also known as LKE on Linode.
 After deploy to save kubeconfig to file do the following:
 
 ```
-export KUBE_VAR=`terraform output kubeconfig` && echo $KUBE_VAR | base64 -di > ~./lke-cluster-config.yaml
+export KUBE_VAR=`terraform output kubeconfig` && echo $KUBE_VAR | base64 -di > ~/lke-cluster-config.yaml
 ```
 
 Add this kubeconfig file to the `$KUBECONFIG` env var:
 
-`export KUBECONFIG=lke-cluster-config.yaml`
+`export KUBECONFIG=~/lke-cluster-config.yaml`
