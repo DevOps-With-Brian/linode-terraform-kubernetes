@@ -11,6 +11,12 @@ provider "linode" {
   token = var.token
 }
 
+provider "helm" {
+  kubernetes {
+    config_path = "kube-config"
+  }
+}
+
 resource "linode_lke_cluster" "linode_lke" {
     label       = var.label
     k8s_version = var.k8s_version
@@ -24,6 +30,13 @@ resource "linode_lke_cluster" "linode_lke" {
             count = pool.value["count"]
         }
     }
+}
+
+resource "helm_release" "ingress-nginx" {
+  depends_on   = [local_file.kubeconfig]
+  name       = "ingress"
+  repository = "https://kubernetes.github.io/ingress-nginx"
+  chart      = "ingress-nginx"
 }
 
 //Export this cluster's attributes
@@ -46,4 +59,10 @@ output "id" {
 
 output "pool" {
    value = linode_lke_cluster.linode_lke.pool
+}
+
+resource "local_file" "kubeconfig" {
+  depends_on   = [linode_lke_cluster.linode_lke]
+  filename     = "kube-config"
+  content      = base64decode(linode_lke_cluster.linode_lke.kubeconfig)
 }
