@@ -1,2 +1,2 @@
 # Linode Terraform
-This repo consists of a few folders that setup different things in linode.  THe lke folder is for setting up kubernetes and after that is setup the dns folder can be used to setup the linode domain/dns config for the ingress.
+This repo consists of a few folders that setup different things in linode.  The `lke` folder is for setting up kubernetes and after that is setup the `dns` folder can be used to setup the linode domain/dns config for the ingress.
