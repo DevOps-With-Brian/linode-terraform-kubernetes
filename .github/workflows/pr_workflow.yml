@@ -6,13 +6,13 @@ on:
       - synchronize
 jobs:
   pr-workflow:
+    name: Validating Commit Message
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ${{ env.tf_actions_working_dir }}
     permissions:
       pull-requests: write
-    name: Validating Commit Message
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
