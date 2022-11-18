@@ -1,5 +1,5 @@
 # Linode Terraform DNS/Domain
-Builds out a domain and dns records for use with lke ingress.
+Builds out a domain and dns records for use with lke ingress.  This also has options setup for the github pages custom domain setup, you can comment those sections out if you don't want to use them but atm I'm using github pages for my site until I can get it setup more.
 
 **Ensure you have updated the terraform.tfvars appropriately to match the values you want to use.**
 
