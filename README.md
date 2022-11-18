@@ -1,4 +1,6 @@
 # Linode Terraform
+[![version](https://img.shields.io/badge/version-0.0.2-blue)](https://github.com/DevOps-With-Brian/linode-terraform-kubernetes/blob/main/CHANGELOG.md)
+
 This not only is meant to be used as a guide to help others but also is my production terraform code for [DevOps With Brian](www.devopswithbrian.com) where I have a blog and a few other things used in [Youtube Videos](https://www.youtube.com/@devopswithbrian)
 
 If using custom dns and setting up a domain then you will want on your domain registrar/current dns for it update it to use custom nameservers:
