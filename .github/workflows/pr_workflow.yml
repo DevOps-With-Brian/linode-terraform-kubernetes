@@ -24,7 +24,7 @@ jobs:
         run: cz check -m "${{env.MSG }}"
   terraform_pr_checks:
     needs: validate_commit
-    name: Validating Terraform
+    name: Checking For Folder Changes
     runs-on: ubuntu-latest
     outputs:
       dns_changes: ${{ steps.changed-files-dns.outputs.any_changed}}
@@ -79,10 +79,12 @@ jobs:
     - uses: actions/checkout@v3
     - uses: hashicorp/setup-terraform@v2
 
+    - run: terraform init
+
     - name: Terraform Plan
       id: plan
       working-directory: ./dns
-      run: terraform plan -no-color
+      run: terraform plan -var="token=${{ secrets.TF_VAR_TOKEN }}" -var="nodebalancer_ip=${{ secrets.TF_VAR_nodebalancer_ip}}" -var="soa_email=${{ secrets.TF_VAR_soa_email}}" -var-file="terraform.tfvars" -no-color
       continue-on-error: true
 
     - run: echo ${{ steps.plan.outputs.stdout }}
