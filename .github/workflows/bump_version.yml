@@ -29,9 +29,9 @@ jobs:
       
       - name: Commit files
         run: |
-          rm .git/COMMIT_EDITMSG
           git add README.md
           git commit -a -m "docs(README.md): updating version badge"
+        continue-on-error: true
       
       - name: Push Readme Changes
         uses: ad-m/github-push-action@master
