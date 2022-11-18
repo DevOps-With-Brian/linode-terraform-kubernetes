@@ -1,3 +1,9 @@
+## 0.4.3 (2022-11-18)
+
+### Fix
+
+- **github-actions**: testing a change to fix readme
+
 ## 0.4.2 (2022-11-18)
 
 ### Fix
