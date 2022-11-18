@@ -1,3 +1,9 @@
+## 0.4.0 (2022-11-18)
+
+### Feat
+
+- **commitizen**: testing a version bump
+
 ## 0.3.0 (2022-11-18)
 
 ### Feat
