@@ -67,3 +67,17 @@ jobs:
       run: |
         echo "One or more files in the dns folder has changed."
         echo "List all the files that have changed: ${{ steps.changed-files-dns.outputs.all_changed_files }}"
+
+  terraform_dns_checks:
+    needs: terraform_pr_checks
+    if: jobs.terraform_pr_checks.changed-files-dns.outputs.any_changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: hashicorp/setup-terraform@v2
+
+    - name: Terraform fmt
+      id: fmt
+      working-directory: ./dns
+      run: terraform fmt -check
+      continue-on-error: true
