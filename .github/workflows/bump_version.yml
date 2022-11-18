@@ -14,19 +14,26 @@ jobs:
         with:
           fetch-depth: 0
           token: "${{ secrets.COMMITIZEN_TOKEN  }}"
+      
       - id: cz
         name: Create bump and changelog
         uses: commitizen-tools/commitizen-action@master
         with:
           github_token: ${{ secrets.COMMITIZEN_TOKEN  }}
+      
       - name: Print Version
         run: echo "Bumped to version ${{ steps.cz.outputs.version }}"
+      
       - name: Update README.md Version
         run: sed -i 's/[0-9].[0-9].[0-9]/${{ steps.cz.outputs.version }}/g' README.md
+      
       - name: Commit files
+        with:
+        github_token: ${{ secrets.COMMITIZEN_TOKEN  }}
         run: |
           git add README.md
           git commit -a -m "docs(README.md): updating version badge"
+      
       - name: Push Readme Changes
         uses: ad-m/github-push-action@master
         with:
