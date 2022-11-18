@@ -4,6 +4,8 @@ on:
       - opened
       - edited
       - synchronize
+    branches:
+      - main
 jobs:
   validate_commit:
     name: Validating Commit Message
@@ -26,12 +28,42 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: hashicorp/setup-terraform@v2
+    - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+    
+    - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v34
 
-    - run: terraform init
+    - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
 
-    - id: plan
-      run: terraform plan -no-color
+    - name: Check For Changes in lke folder
+        id: changed-files-lke
+        uses: tj-actions/changed-files@v34
+        with:
+          files: |
+            lke/**
 
-    - run: echo ${{ steps.plan.outputs.stdout }}
-    - run: echo ${{ steps.plan.outputs.stderr }}
-    - run: echo ${{ steps.plan.outputs.exitcode }}
+    - name: Check For Changes in dns folder
+        id: changed-files-dns
+        uses: tj-actions/changed-files@v34
+        with:
+          files: |
+            dns/**
+
+    - name: Run step if any file(s) in the lke folder change
+        if: steps.changed-files-lke.outputs.any_changed == 'true'
+        run: |
+          echo "One or more files in the lke folder has changed."
+          echo "List all the files that have changed: ${{ steps.changed-files-lke.outputs.all_changed_files }}"
+
+    - name: Run step if any file(s) in the dns folder change
+        if: steps.changed-files-dns.outputs.any_changed == 'true'
+        run: |
+          echo "One or more files in the dns folder has changed."
+          echo "List all the files that have changed: ${{ steps.changed-files-dns.outputs.all_changed_files }}"
