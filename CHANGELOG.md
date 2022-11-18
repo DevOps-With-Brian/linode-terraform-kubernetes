@@ -1,3 +1,9 @@
+## 0.2.0 (2022-11-18)
+
+### Feat
+
+- **auto-version-badge**: trying to get the readme push back with badge
+
 ## 0.1.0 (2022-11-18)
 
 ### Feat
