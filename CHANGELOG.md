@@ -1,3 +1,9 @@
+## 0.0.3 (2022-11-18)
+
+### Fix
+
+- **cleanup**: updating the code and some workflows (#1)
+
 ## 0.0.2 (2022-11-18)
 
 ### Refactor
