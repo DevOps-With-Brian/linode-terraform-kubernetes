@@ -80,6 +80,7 @@ jobs:
     - uses: hashicorp/setup-terraform@v2
 
     - run: terraform init
+      working-directory: ./dns
 
     - name: Terraform Plan
       id: plan
