@@ -1,3 +1,9 @@
+## 0.4.2 (2022-11-18)
+
+### Fix
+
+- **github-actions**: updating workflow for auto version badge in readme
+
 ## 0.4.1 (2022-11-18)
 
 ### Fix
