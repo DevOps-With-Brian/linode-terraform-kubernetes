@@ -1,3 +1,14 @@
+## 0.1.0 (2022-11-18)
+
+### Feat
+
+- **badge-version**: working on automated readme modification
+- **version-badge**: updating the ci to auto update the version badge in the readme and push it back to the repo
+
+### Fix
+
+- **github-actions**: fixing some ci issues
+
 ## 0.0.3 (2022-11-18)
 
 ### Fix
