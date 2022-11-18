@@ -25,6 +25,7 @@ jobs:
         run: sed -i 's/[0-9].[0-9].[0-9]/${{ steps.cz.outputs.version }}/g' README.md
       - name: Commit files
         run: |
+          git add README.md
           git commit -a -m "docs(README.md): updating version badge"
       - name: Push Readme Changes
         uses: ad-m/github-push-action@master
