@@ -1,3 +1,13 @@
+## 0.3.0 (2022-11-18)
+
+### Feat
+
+- **version-badge**: working on ci for auto version badge in readme
+
+### Fix
+
+- **version-badge**: trying to get the version badge in readme update working
+
 ## 0.2.0 (2022-11-18)
 
 ### Feat
