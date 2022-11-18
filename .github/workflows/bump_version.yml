@@ -28,8 +28,6 @@ jobs:
         run: sed -i 's/[0-9].[0-9].[0-9]/${{ steps.cz.outputs.version }}/g' README.md
       
       - name: Commit files
-        with:
-        github_token: ${{ secrets.COMMITIZEN_TOKEN  }}
         run: |
           git add README.md
           git commit -a -m "docs(README.md): updating version badge"
