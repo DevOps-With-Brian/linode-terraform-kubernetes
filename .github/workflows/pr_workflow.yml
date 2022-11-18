@@ -5,7 +5,7 @@ on:
       - edited
       - synchronize
 jobs:
-  validate-commit:
+  validate_commit:
     name: Validating Commit Message
     runs-on: ubuntu-latest
     steps:
@@ -20,3 +20,18 @@ jobs:
         run: pip install -U Commitizen
       - name: Check For Valid Commit Message
         run: cz check -m "${{env.MSG }}"
+  terraform_pr_checks:
+    needs: validate_commit
+    name: Validating Terraform
+    runs-on: ubuntu-latest
+    steps:
+    - uses: hashicorp/setup-terraform@v2
+
+    - run: terraform init
+
+    - id: plan
+      run: terraform plan -no-color
+
+    - run: echo ${{ steps.plan.outputs.stdout }}
+    - run: echo ${{ steps.plan.outputs.stderr }}
+    - run: echo ${{ steps.plan.outputs.exitcode }}
