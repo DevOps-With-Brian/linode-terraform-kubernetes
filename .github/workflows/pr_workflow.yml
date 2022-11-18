@@ -33,37 +33,37 @@ jobs:
         fetch-depth: 0
     
     - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v34
+      id: changed-files
+      uses: tj-actions/changed-files@v34
 
     - name: List all changed files
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
-          done
+      run: |
+        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          echo "$file was changed"
+        done
 
     - name: Check For Changes in lke folder
-        id: changed-files-lke
-        uses: tj-actions/changed-files@v34
-        with:
-          files: |
-            lke/**
+      id: changed-files-lke
+      uses: tj-actions/changed-files@v34
+      with:
+        files: |
+          lke/**
 
     - name: Check For Changes in dns folder
-        id: changed-files-dns
-        uses: tj-actions/changed-files@v34
-        with:
-          files: |
-            dns/**
+      id: changed-files-dns
+      uses: tj-actions/changed-files@v34
+      with:
+        files: |
+          dns/**
 
     - name: Run step if any file(s) in the lke folder change
-        if: steps.changed-files-lke.outputs.any_changed == 'true'
-        run: |
-          echo "One or more files in the lke folder has changed."
-          echo "List all the files that have changed: ${{ steps.changed-files-lke.outputs.all_changed_files }}"
+      if: steps.changed-files-lke.outputs.any_changed == 'true'
+      run: |
+        echo "One or more files in the lke folder has changed."
+        echo "List all the files that have changed: ${{ steps.changed-files-lke.outputs.all_changed_files }}"
 
     - name: Run step if any file(s) in the dns folder change
-        if: steps.changed-files-dns.outputs.any_changed == 'true'
-        run: |
-          echo "One or more files in the dns folder has changed."
-          echo "List all the files that have changed: ${{ steps.changed-files-dns.outputs.all_changed_files }}"
+      if: steps.changed-files-dns.outputs.any_changed == 'true'
+      run: |
+        echo "One or more files in the dns folder has changed."
+        echo "List all the files that have changed: ${{ steps.changed-files-dns.outputs.all_changed_files }}"
