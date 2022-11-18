@@ -1,3 +1,9 @@
+## 0.4.1 (2022-11-18)
+
+### Fix
+
+- **github-actions**: updating to try and get auto version badge working
+
 ## 0.4.0 (2022-11-18)
 
 ### Feat
