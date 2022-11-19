@@ -24,6 +24,12 @@ This also sets up cert-manager in kubernetes and allows for auto cert generation
 
    initial_setup
    kubernetes_setup
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Changelog
+   :hidden:
+
    changelog
 
 Indices and tables
