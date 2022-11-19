@@ -162,7 +162,7 @@ jobs:
     - name: Setup Kubeconfig
       working-directory: ./lke
       run: |
-        export KUBE_VAR=`terraform output kubeconfig` && echo $KUBE_VAR | base64 -di > lke-cluster-config.yaml
+        export KUBE_VAR=`terraform output kubeconfig`
         export KUBECONFIG=lke-cluster-config.yaml
 
     - name: Terraform Plan
