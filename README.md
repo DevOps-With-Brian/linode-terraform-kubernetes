@@ -1,5 +1,7 @@
 # Linode Terraform
 [![version](https://img.shields.io/badge/version-0.4.8-blue)](https://github.com/DevOps-With-Brian/linode-terraform-kubernetes/blob/main/CHANGELOG.md)
+[![Documentation Status](https://readthedocs.org/projects/linode-terraform-kubernetes/badge/?version=latest)](https://linode-terraform-kubernetes.readthedocs.io/en/latest/?badge=latest)
+
 
 This not only is meant to be used as a guide to help others but also is my production terraform code for [DevOps With Brian](www.devopswithbrian.com) where I have a blog and a few other things used in [Youtube Videos](https://www.youtube.com/@devopswithbrian)
 
@@ -29,6 +31,12 @@ The `rasa` dir is an example helm setup with a values file for deploying our Ras
 # Docs
 Docs are setup with [Sphinx ReadtheDocs](https://docs.readthedocs.io/en/latest/intro/getting-started-with-sphinx.html).
 
-In order to build docs locally just install the doc_requirements.txt
+In order to build docs locally setup a new python virtualenv and install the requirements:
 
-`pip install -r doc_requirements.txt`
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r doc_requirements.txt
+```
+
+Then you can run `make html` to build the docs.
