@@ -1,3 +1,13 @@
+## 0.5.0 (2022-11-19)
+
+### Feat
+
+- **docs**: adding in docs
+
+### Fix
+
+- **.cz.toml**: updating it to not use the .cz.toml for the docs version
+
 ## 0.4.8 (2022-11-19)
 
 ### Fix
