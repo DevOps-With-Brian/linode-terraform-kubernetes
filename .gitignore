@@ -31,3 +31,9 @@ override.tf.json
 
 # k8s stuff
 kube-config
+
+# python
+.venv
+
+# Docs Stuff
+docs/_build
