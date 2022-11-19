@@ -180,9 +180,6 @@ jobs:
       run: terraform validate -no-color
       working-directory: ./lke
 
-    - name: Setup Kubeconfig
-      run: export KUBE_VAR=`terraform output kubeconfig` && echo $KUBE_VAR | base64 -di > ~/lke-cluster-config.yaml
-
     - name: Terraform Plan
       id: plan
       working-directory: ./lke

@@ -18,9 +18,3 @@ output "id" {
 output "pool" {
    value = linode_lke_cluster.linode_lke.pool
 }
-
-resource "local_file" "kubeconfig" {
-  depends_on   = [linode_lke_cluster.linode_lke]
-  filename     = "kube-config"
-  content      = base64decode(linode_lke_cluster.linode_lke.kubeconfig)
-}

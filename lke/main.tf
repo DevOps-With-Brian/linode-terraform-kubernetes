@@ -40,7 +40,7 @@ resource "linode_lke_cluster" "linode_lke" {
 }
 
 resource "helm_release" "ingress-nginx" {
-  depends_on   = [local_file.kubeconfig]
+  depends_on   = [linode_lke_cluster.linode_lke]
   name       = "ingress"
   repository = "https://kubernetes.github.io/ingress-nginx"
   chart      = "ingress-nginx"
