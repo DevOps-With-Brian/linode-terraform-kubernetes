@@ -1,3 +1,9 @@
+## 0.4.5 (2022-11-19)
+
+### Fix
+
+- **version-badge**: trying to get the auto version readme working
+
 ## 0.4.4 (2022-11-18)
 
 ### Fix
