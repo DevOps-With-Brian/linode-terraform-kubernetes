@@ -1,3 +1,9 @@
+## 0.4.6 (2022-11-19)
+
+### Fix
+
+- **auto-version**: updating workflow for auto version readme badge
+
 ## 0.4.5 (2022-11-19)
 
 ### Fix
