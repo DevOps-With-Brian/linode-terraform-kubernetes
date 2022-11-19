@@ -1,3 +1,9 @@
+## 0.4.4 (2022-11-18)
+
+### Fix
+
+- **github-actions**: testing out auto updating readme with version badge
+
 ## 0.4.3 (2022-11-18)
 
 ### Fix
