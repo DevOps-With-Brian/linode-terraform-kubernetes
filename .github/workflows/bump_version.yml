@@ -28,8 +28,11 @@ jobs:
         run: sed -i 's/[0-9].[0-9].[0-9]/${{ steps.cz.outputs.version }}/g' README.md
       
       - name: Commit Readme
+        continue-on-error: true
         run: |
-          git rm .git/COMMIT_EDITMSG
+          if [ -f ".git/COMMIT_EDITMSG" ] ; then
+              rm .git/COMMIT_EDITMSG
+          fi
           git add README.md
           git commit -m "docs(README.md): updating badge version in readme"
           git push origin main
