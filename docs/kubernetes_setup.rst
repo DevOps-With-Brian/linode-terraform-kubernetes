@@ -71,3 +71,21 @@ Ensuring we still have our ``TF_VAR_token`` exported on our shell then we can ru
 
 .. note::
     This step can take a few to complete since it has to spin up nodes and set it all up, so be patient.
+
+Connecting To New Kubernetes Cluster
+------------------------------------
+After running the terraform apply command to deploy the cluster we can run the following command to generate our kubeconfig::
+
+   export KUBE_VAR=`terraform output kubeconfig` && echo $KUBE_VAR | base64 -di > ~/lke-cluster-config.yaml
+
+Then add this to the ``$KUBECONFIG`` env var::
+
+   export KUBECONFIG=kube-config
+
+Now we should be able to run ``kubectl cluster-info`` to get the info from the cluster which confirms we can access it::
+
+   Kubernetes control plane is running at https://XXXX.us-east-2.linodelke.net:443
+   KubeDNS is running at https://XXXX.us-east-2.linodelke.net:443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+   To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'. 
+

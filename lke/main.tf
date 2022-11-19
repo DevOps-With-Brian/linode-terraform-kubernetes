@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "brianhh12301"
+
+    workspaces {
+      name = "linode-terraform-lke"
+    }
+  }
   required_providers {
     linode = {
       source  = "linode/linode"
