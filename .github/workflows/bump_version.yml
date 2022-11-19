@@ -29,6 +29,7 @@ jobs:
       
       - name: Commit Readme
         run: |
+          git rm .git/COMMIT_EDITMSG
           git add README.md
           git commit -m "docs(README.md): updating badge version in readme"
           git push origin main
