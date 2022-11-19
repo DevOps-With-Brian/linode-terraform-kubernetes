@@ -25,3 +25,10 @@ After that go to the `dns` folder and set that up if you want a custom domain an
 Finally you go to the `cert-manager` folder to setup the cert manager for Let's Encrypt ssl certs setup and encrypting your public pods.
 
 The `rasa` dir is an example helm setup with a values file for deploying our Rasa chatbot onto the cluster and being able to talk to it over SSL.
+
+# Docs
+Docs are setup with [Sphinx ReadtheDocs](https://docs.readthedocs.io/en/latest/intro/getting-started-with-sphinx.html).
+
+In order to build docs locally just install the doc_requirements.txt
+
+`pip install -r doc_requirements.txt`
