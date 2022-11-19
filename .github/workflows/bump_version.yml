@@ -40,7 +40,7 @@ jobs:
       - name: Update Docs Changelog
         continue-on-error: true
         run: |
-          apt-get install pandoc -y
+          sudo apt-get install -y pandoc
           pandoc --from=markdown --to=rst --output=docs/changelog.rst CHANGELOG.md
           sed -i '1i **********' changelog.rst
           sed -i '2i Changelog' changelog.rst
