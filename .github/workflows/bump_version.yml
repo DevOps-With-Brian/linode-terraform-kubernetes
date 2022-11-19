@@ -27,13 +27,10 @@ jobs:
       - name: Update README.md Version
         run: sed -i 's/[0-9].[0-9].[0-9]/${{ steps.cz.outputs.version }}/g' README.md
       
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Commit Readme
         with:
-          commit_message: "docs(README.md): updating readme for version badge update"
-          file_pattern: "README.md"
-      
-      - name: Push Readme Changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.COMMITIZEN_TOKEN }}
-          branch: ${{ github.ref }}      
+          github_token: ${{ secrets.COMMITIZEN_TOKEN  }}
+        run: |
+          git add README.md
+          git commit -m "docs(README.md): updating badge version in readme"
+          git push origin main
