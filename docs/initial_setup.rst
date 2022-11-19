@@ -1,5 +1,6 @@
-Linode Terraform - Initial Setup
-================================================================
+**************
+Initial Setup
+**************
 This documentation section goes over the initial setup of everything required to setup a `Linode <https://linode.com/>`_ LKE cluster as code via `Terraform <https://www.terraform.io/>`_.  This currently sets up the following after complete:
 
 | Linode LKE - Kubernetes Cluster with 3 shared nodes
@@ -8,11 +9,11 @@ This documentation section goes over the initial setup of everything required to
 
 This also sets up cert-manager in kubernetes and allows for auto cert generation using Let's Encrypt using annocations on our deployments.
 
+There are a few prerequisites if you decide to use this whole project.  The following sections go over some of those and how to set them up. 
 
 
-
-Setup Pre-Req's
----------------
+Custom Domain
+-------------
 For the entire project the way I am using it you will need your own domain, otherwise you can skip the ingress ssl and domain parts and only use the LKE Terraform.
 
 Once you setup your own domain you are going to want to point it to the Linode nameservers:
@@ -24,3 +25,17 @@ Once you setup your own domain you are going to want to point it to the Linode n
     ns3.linode.com
     ns4.linode.com
     ns5.linode.com
+
+
+Terraform
+---------
+You will also want to ensure you have `Terraform Downloads <https://developer.hashicorp.com/terraform/downloads>`_ installed.
+
+
+Linode Account
+--------------
+You will also want to sign up for a `Linode <https://linode.com/>`_ account if you don't already have one.
+
+This setup if used completely will setup as previously stated above the LKE, Node_Balancer, and Domain setup in Linode.
+
+For more information on Terraform on Linode for LKE please see `Deploy LKE Cluster Using Terraform <https://www.linode.com/docs/guides/how-to-deploy-an-lke-cluster-using-terraform/>`_ 
