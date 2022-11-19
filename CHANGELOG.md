@@ -1,3 +1,9 @@
+## 0.4.8 (2022-11-19)
+
+### Fix
+
+- **auto-readme**: updating the auto readme workflow
+
 ## 0.4.7 (2022-11-19)
 
 ### Fix
