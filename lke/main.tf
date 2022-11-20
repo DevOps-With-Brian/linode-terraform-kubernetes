@@ -23,7 +23,7 @@ provider "linode" {
 
 provider "helm" {
   kubernetes {
-    config_path = "lke-cluster-config.yaml"
+    config_path = "kube-config"
   }
 }
 
@@ -43,7 +43,7 @@ resource "linode_lke_cluster" "linode_lke" {
 }
 
 resource "helm_release" "ingress-nginx" {
-  depends_on   = [linode_lke_cluster.linode_lke]
+  depends_on   = [local_file.kubeconfig]
   name       = "ingress"
   repository = "https://kubernetes.github.io/ingress-nginx"
   chart      = "ingress-nginx"
