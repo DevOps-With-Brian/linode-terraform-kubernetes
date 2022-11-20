@@ -162,7 +162,7 @@ jobs:
     - name: Setup Kubeconfig
       working-directory: ./lke
       run: |
-        export KUBE_VAR=base64 -di ${{ secrets.kube_config }} > kube-config
+        base64 -di ${{ secrets.kube_config }} > kube-config
 
     - name: Terraform Plan
       id: plan
