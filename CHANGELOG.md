@@ -1,3 +1,9 @@
+## 0.8.0 (2022-11-20)
+
+### Feat
+
+- **cert-manager**: starting to update cert-manager to use terraform (#6)
+
 ## 0.7.0 (2022-11-20)
 
 ### Feat
