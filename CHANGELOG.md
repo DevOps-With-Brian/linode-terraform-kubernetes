@@ -1,3 +1,9 @@
+## 0.8.1 (2022-11-20)
+
+### Fix
+
+- **cert-manager**: reverting cert-manager to not use terraform and just use helm commands
+
 ## 0.8.0 (2022-11-20)
 
 ### Feat
