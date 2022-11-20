@@ -49,6 +49,10 @@ Modify these for your needs.
 
     A shared 2GB Linode with 1 vcpu and costs about $10 per node per month for a total cost of $30, plus $10 a month for the load balancer.
 
+Terraform Cloud Login For Remote State
+--------------------------------------
+Before peforming the next steps you will need to login via the cli to the terraform cloud and generate a token to use following the guide at https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-login
+
 Terraform Init & Plan
 ---------------------
 Now that we have our variables all setup and should have Terraform installed now, we can initialize our project and run a plan to verify what it will do.
@@ -74,7 +78,7 @@ Ensuring we still have our ``TF_VAR_token`` exported on our shell then we can ru
 
 Connecting To New Kubernetes Cluster
 ------------------------------------
-After running the terraform apply command to deploy the cluster we should now have a ``kube-config`` file in our directory, so from this dir we can now run ``kubectl`` commands to interact with the cluster, export this as seen below::
+After running the terraform apply command to deploy the cluster we should now have a ``kube-config`` file in our directory, so from this dir we can now run ``kubectl`` commands to interact with the cluster, export this as seen below.
 
 Add this to the ``$KUBECONFIG`` env var::
 
