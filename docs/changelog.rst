@@ -1,8 +1,21 @@
 **********
 Changelog
 **********
+0.8.0 (2022-11-20)
+------------------
+
+Feat
+~~~~
+
+-  **cert-manager**: starting to update cert-manager to use terraform
+   (#6)
+
+.. _section-1:
+
 0.7.0 (2022-11-20)
 ------------------
+
+.. _feat-1:
 
 Feat
 ~~~~
@@ -14,24 +27,24 @@ Fix
 
 -  **version-bump**: testing out the version bump
 
-.. _section-1:
+.. _section-2:
 
 0.6.0 (2022-11-20)
 ------------------
 
-.. _feat-1:
+.. _feat-2:
 
 Feat
 ~~~~
 
 -  **terraform-state**: updating terraform remote state (#3)
 
-.. _section-2:
+.. _section-3:
 
 0.5.0 (2022-11-19)
 ------------------
 
-.. _feat-2:
+.. _feat-3:
 
 Feat
 ~~~~
@@ -46,7 +59,7 @@ Fix
 -  **.cz.toml**: updating it to not use the .cz.toml for the docs
    version
 
-.. _section-3:
+.. _section-4:
 
 0.4.8 (2022-11-19)
 ------------------
@@ -58,7 +71,7 @@ Fix
 
 -  **auto-readme**: updating the auto readme workflow
 
-.. _section-4:
+.. _section-5:
 
 0.4.7 (2022-11-19)
 ------------------
@@ -71,7 +84,7 @@ Fix
 -  **auto-versioning**: updating the auto versioning badge readme
    workflow
 
-.. _section-5:
+.. _section-6:
 
 0.4.6 (2022-11-19)
 ------------------
@@ -83,7 +96,7 @@ Fix
 
 -  **auto-version**: updating workflow for auto version readme badge
 
-.. _section-6:
+.. _section-7:
 
 0.4.5 (2022-11-19)
 ------------------
@@ -95,7 +108,7 @@ Fix
 
 -  **version-badge**: trying to get the auto version readme working
 
-.. _section-7:
+.. _section-8:
 
 0.4.4 (2022-11-18)
 ------------------
@@ -108,7 +121,7 @@ Fix
 -  **github-actions**: testing out auto updating readme with version
    badge
 
-.. _section-8:
+.. _section-9:
 
 0.4.3 (2022-11-18)
 ------------------
@@ -120,7 +133,7 @@ Fix
 
 -  **github-actions**: testing a change to fix readme
 
-.. _section-9:
+.. _section-10:
 
 0.4.2 (2022-11-18)
 ------------------
@@ -133,7 +146,7 @@ Fix
 -  **github-actions**: updating workflow for auto version badge in
    readme
 
-.. _section-10:
+.. _section-11:
 
 0.4.1 (2022-11-18)
 ------------------
@@ -146,24 +159,24 @@ Fix
 -  **github-actions**: updating to try and get auto version badge
    working
 
-.. _section-11:
+.. _section-12:
 
 0.4.0 (2022-11-18)
 ------------------
 
-.. _feat-3:
+.. _feat-4:
 
 Feat
 ~~~~
 
 -  **commitizen**: testing a version bump
 
-.. _section-12:
+.. _section-13:
 
 0.3.0 (2022-11-18)
 ------------------
 
-.. _feat-4:
+.. _feat-5:
 
 Feat
 ~~~~
@@ -178,24 +191,24 @@ Fix
 -  **version-badge**: trying to get the version badge in readme update
    working
 
-.. _section-13:
+.. _section-14:
 
 0.2.0 (2022-11-18)
 ------------------
 
-.. _feat-5:
+.. _feat-6:
 
 Feat
 ~~~~
 
 -  **auto-version-badge**: trying to get the readme push back with badge
 
-.. _section-14:
+.. _section-15:
 
 0.1.0 (2022-11-18)
 ------------------
 
-.. _feat-6:
+.. _feat-7:
 
 Feat
 ~~~~
@@ -211,7 +224,7 @@ Fix
 
 -  **github-actions**: fixing some ci issues
 
-.. _section-15:
+.. _section-16:
 
 0.0.3 (2022-11-18)
 ------------------
@@ -223,7 +236,7 @@ Fix
 
 -  **cleanup**: updating the code and some workflows (#1)
 
-.. _section-16:
+.. _section-17:
 
 0.0.2 (2022-11-18)
 ------------------
@@ -233,12 +246,12 @@ Refactor
 
 -  **lke**: updating lke outputs to be their own file
 
-.. _section-17:
+.. _section-18:
 
 0.0.1 (2022-11-18)
 ------------------
 
-.. _feat-7:
+.. _feat-8:
 
 Feat
 ~~~~
