@@ -1,5 +1,5 @@
 # Linode Terraform
-[![version](https://img.shields.io/badge/version-0.5.0-blue)](https://github.com/DevOps-With-Brian/linode-terraform-kubernetes/blob/main/CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-0.6.0-blue)](https://github.com/DevOps-With-Brian/linode-terraform-kubernetes/blob/main/CHANGELOG.md)
 [![Documentation Status](https://readthedocs.org/projects/linode-terraform-kubernetes/badge/?version=latest)](https://linode-terraform-kubernetes.readthedocs.io/en/latest/?badge=latest)
 
 
