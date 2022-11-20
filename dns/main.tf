@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "brianhh12301"
+
+    workspaces {
+      name = "linode-terraform-dns"
+    }
+  }
   required_providers {
     linode = {
       source  = "linode/linode"

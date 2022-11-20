@@ -31,6 +31,7 @@ override.tf.json
 
 # k8s stuff
 kube-config
+lke-cluster-config.yaml
 
 # python
 .venv
