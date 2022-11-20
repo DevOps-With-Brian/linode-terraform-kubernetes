@@ -11,12 +11,6 @@ Builds out a cluster on Linode for kubernetes also known as LKE on Linode.
 
 `terraform apply -var-file="terraform.tfvars"` - To apply the changes/deploy cluster.
 
-After deploy to save kubeconfig to file do the following:
+After deploy there should be a kube-config file now in the lke dir and from this dir you can now run kubectl commands. 
 
-```
-export KUBE_VAR=`terraform output kubeconfig` && echo $KUBE_VAR | base64 -di > lke-cluster-config.yaml
-```
-
-Add this kubeconfig file to the `$KUBECONFIG` env var:
-
-`export KUBECONFIG=lke-cluster-config.yaml`
+`export KUBECONFIG=kube-config`
