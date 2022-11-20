@@ -7,6 +7,9 @@ terraform {
     }
   }
   required_providers {
+     local = {
+      version = "~> 2.1"
+    }
     linode = {
       source  = "linode/linode"
       version = "1.29.4"
