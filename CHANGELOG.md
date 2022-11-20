@@ -1,3 +1,13 @@
+## 0.7.0 (2022-11-20)
+
+### Feat
+
+- **ci**: triggering version bump
+
+### Fix
+
+- **version-bump**: testing out the version bump
+
 ## 0.6.0 (2022-11-20)
 
 ### Feat
