@@ -1,3 +1,9 @@
+## 0.6.0 (2022-11-20)
+
+### Feat
+
+- **terraform-state**: updating terraform remote state (#3)
+
 ## 0.5.0 (2022-11-19)
 
 ### Feat
