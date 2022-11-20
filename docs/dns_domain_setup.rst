@@ -41,6 +41,10 @@ Modify these for your needs.
 1. The ``domain_name`` variable is the domain name you will be setting up in linode.
 2. The ``github_pages_alias`` is used for github pages custom domain and sets up the required A records for that.
 
+Terraform Cloud Login For Remote State
+--------------------------------------
+Before peforming the next steps you will need to login via the cli to the terraform cloud and generate a token to use following the guide at https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-login
+
 Terraform Init & Plan
 ---------------------
 Now that we have our variables all setup and should have Terraform installed now, we can initialize our project and run a plan to verify what it will do.
