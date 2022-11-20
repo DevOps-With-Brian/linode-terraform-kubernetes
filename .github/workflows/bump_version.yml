@@ -48,6 +48,8 @@ jobs:
 
       - name: Commit Changelog Update
         continue-on-error: true
+        with:
+          github_token: ${{ secrets.COMMITIZEN_TOKEN  }}
         run: |
           if [ -f ".git/COMMIT_EDITMSG" ] ; then
               rm .git/COMMIT_EDITMSG
