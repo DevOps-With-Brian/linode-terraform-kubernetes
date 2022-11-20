@@ -24,6 +24,7 @@ This also sets up cert-manager in kubernetes and allows for auto cert generation
 
    initial_setup
    kubernetes_setup
+   dns_domain_setup
 
 .. toctree::
    :maxdepth: 1
