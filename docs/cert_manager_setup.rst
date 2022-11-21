@@ -1,0 +1,65 @@
+*******************
+Cert Manager Setup
+*******************
+This section will go over how to get cert manager setup on your kubernetes cluster to allow for automated SSL certificates from Let's Encrypt.
+
+More information can be found at `Linode TLS Encryption Guide Kubernetes <https://www.linode.com/docs/guides/how-to-configure-load-balancing-with-tls-encryption-on-a-kubernetes-cluster/>`_ or at `Cert Manager Install <https://cert-manager.io/docs/installation/>`_
+
+Ensure you are in the ``cert-manager`` directory for all of these steps.
+
+.. note::
+    Be sure before starting any of the below steps you already have your dns nameservers from your custom domain pointing to the linode servers and resolving, this should have been done in the previous dns terraform steps.
+
+Install Cert Manager CRDs
+-------------------------
+Ensure you have your `kube-config` file from the previous kubernetes step exported or you can copy to this folder if needed, and then you will want to run the following to install the cert manager CRDs::
+
+    kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.0/cert-manager.crds.yaml
+
+Setup Cert Manager Namespace
+----------------------------
+Next we are going to create a cert manager namespace to be used::
+
+    kubectl create namespace cert-manager
+
+Install Cert Manager
+--------------------
+Now we can add our cert-manager helm repo and update it then install it::
+
+    helm repo add cert-manager https://charts.jetstack.io
+    helm repo update
+    helm install \
+    my-cert-manager cert-manager/cert-manager \
+    --namespace cert-manager \
+    --version v1.8.0
+
+Now verify you see the corresponding pods coming up and running::
+
+    kubectl get pods --namespace cert-manager
+
+You should see something like::
+
+    NAME                                       READY   STATUS    RESTARTS   AGE
+    cert-manager-579d48dff8-84nw9              1/1     Running   3          1m
+    cert-manager-cainjector-789955d9b7-jfskr   1/1     Running   3          1m
+    cert-manager-webhook-64869c4997-hnx6n      1/1     Running   0          1m
+
+.. note::
+    Before continuing to the next steps ensure these cert-manager pods are running and ready.
+
+Setting Up ClusterIssuer Resource
+---------------------------------
+Next we will be creating a cluster issuer resource that will be in charge of helping with the automated ssl certs.
+
+This manifest we are about to install will register an account on an ACME server used by Let's Encrypt for the certificates.
+
+To secure the email we have set this up as a export instead of an actual terraform tfvar.  So we need to export our email address we want to use with Let's Encrypt to issue the certificates automatically.
+
+Once you know what this email should be run the following::
+
+    export EMAIL=xxx@xxx.com
+    envsubst < acme-issuer-prod.yaml | kubectl apply -f -
+
+This will update the email section of that file for you automatically and apply it.
+
+We should now have everything we need setup in order to deploy our test application.  In this setup we are using a rasa chatbot atm for a demo example.  Please proceed to the next Rasa Demo Setup section to see how this works.
