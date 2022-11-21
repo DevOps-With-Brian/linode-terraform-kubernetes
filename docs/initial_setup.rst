@@ -1,16 +1,21 @@
 **************
 Initial Setup
 **************
-This documentation section goes over the initial setup of everything required to setup a `Linode <https://linode.com/>`_ LKE cluster as code via `Terraform <https://www.terraform.io/>`_.  This currently sets up the following after complete:
+This documentation section goes over the initial setup of everything required to setup a `Linode <https://linode.com/>`_ LKE cluster as code via `Terraform <https://www.terraform.io/>`_.  This currently sets up the following after complete::
 
-| Linode LKE - Kubernetes Cluster with 3 shared nodes
-| Linode node_balancer - Using nginx ingress it will use this to allow for public resources if wanted from kubernetes.
-| Linode Domain - Sets up your own domain in linode to be used for dns resolution in kubernetes as well as for a githubpages if desired.
+ Linode LKE - Kubernetes Cluster with 3 shared nodes
+ Linode node_balancer - Using nginx ingress it will use this to allow for public resources if wanted from kubernetes.
+ Linode Domain - Custom domain in linode to be used for dns resolution in kubernetes as well as for a githubpages if desired.
 
 This also sets up cert-manager in kubernetes and allows for auto cert generation using Let's Encrypt using annocations on our deployments.
 
 There are a few prerequisites if you decide to use this whole project.  The following sections go over some of those and how to set them up. 
 
+Commitizen & Conventional Commits
+---------------------------------
+This repo uses `Conventional Commits <https://www.conventionalcommits.org/en/v1.0.0/>`_ along with `Commitizen <https://commitizen-tools.github.io/commitizen/>`_ to allow for auto versioning and such.
+
+Ensure you are using conventional commits for your commit messages and ensure you have installed Commitizen as well from the link provided above.
 
 Custom Domain
 -------------
