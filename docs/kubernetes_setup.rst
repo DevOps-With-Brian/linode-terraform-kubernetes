@@ -82,7 +82,14 @@ After running the terraform apply command to deploy the cluster we should now ha
 
 Add this to the ``$KUBECONFIG`` env var::
 
-   export KUBECONFIG=kube-config
+   export KUBECONFIG=$(pwd)/kube-config
+
+If for some reason you ever delete your kube-config or lose it, you can regenerate it via::
+
+    export KUBE_VAR=`terraform output kubeconfig` && echo $KUBE_VAR | base64 -di > kube-config
+    export KUBECONFIG=$(pwd)/kube-config
+
+This will recreate it and set the path of ``KUBECONFIG`` to it to be used.
 
 Now we should be able to run ``kubectl cluster-info`` to get the info from the cluster which confirms we can access it::
 
@@ -93,10 +100,12 @@ Now we should be able to run ``kubectl cluster-info`` to get the info from the c
 
 Go ahead and run the following command to get the node_balancer external-ip address which you will need for the next dns steps::
 
-    kubectl -n default get services -o wide ingress-nginx-controller
+    kubectl -n default get services -o wide ingress-ingress-nginx-controller
 
 
 This should give us something like::
 
     NAME                          TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE     SELECTOR
     my-ingress-nginx-controller   LoadBalancer   10.128.169.60   192.0.2.0   80:32401/TCP,443:30830/TCP   7h51m   app.kubernetes.io/instance=cingress-nginx,app.kubernetes.io/name=ingress-nginx
+
+Let's move on to the ``dns`` folder and steps.

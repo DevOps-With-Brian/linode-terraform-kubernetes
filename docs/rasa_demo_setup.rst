@@ -28,4 +28,16 @@ Now that we have set our values we can install this into kubernetes::
 
     helm install -f rasa-values.yaml rasa rasa/rasa
 
-This might take a few mins to come up, but once the pod shows ready you can see the status via going to https://subdomain.yourdomain.com
+This might take a few mins to come up, but once the pod shows ready you can see the status via going to https://subdomain.yourdomain.com/status
+
+You can check the pod status by running::
+
+    kubectl get pods
+
+And you should see these::
+
+    NAME                                                READY   STATUS              RESTARTS   AGE
+    rasa-6fb894b7c-vr85l                                0/1     PodInitializing     0          36s
+    rasa-postgresql-0                                   0/1     ContainerCreating   0          35s
+
+Once these show running you should be able to hit the resource at the https://subdomain.yourdomain.com/status route.
