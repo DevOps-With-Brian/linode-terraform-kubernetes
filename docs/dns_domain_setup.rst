@@ -5,6 +5,8 @@ This section is used to setup the Linode DNS options if you want to connect a cu
 
 There is also configuration to setup the required A records for my domain which is a var in the TF code to the Github Pages addresses.  By doing this I can host my other github pages repo on my custom domain.
 
+Ensure you are in the ``dns`` folder for these steps.
+
 Linode API Token
 ----------------
 Just as we setup before for lk3, we will need a Linode API token in order for this to work and be able to setup the resources.  You can find a how to located at https://www.linode.com/docs/guides/getting-started-with-the-linode-api/
@@ -66,3 +68,5 @@ Ensuring we still have our ``TF_VAR_token, TF_VAR_soa_email, and TF_VAR_nodebala
 ``terraform apply -var-file="terraform.tfvars"`` which should ask for a yes prompt and then will deploy the cluster and will generate your kubeconfig to connect to it.
 
 Now you should see your changes reflected in the Linode UI under domains.
+
+Let us move on to to the ``cert-manager`` folder and steps for auto SSL certs.

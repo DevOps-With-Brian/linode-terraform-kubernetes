@@ -16,6 +16,16 @@ Ensure you have your `kube-config` file from the previous kubernetes step export
 
     kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.0/cert-manager.crds.yaml
 
+We should see something like this::
+
+    customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io created
+    customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io created
+    customresourcedefinition.apiextensions.k8s.io/challenges.acme.cert-manager.io created
+    customresourcedefinition.apiextensions.k8s.io/clusterissuers.cert-manager.io created
+    customresourcedefinition.apiextensions.k8s.io/issuers.cert-manager.io created
+    customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io created
+
+
 Setup Cert Manager Namespace
 ----------------------------
 Next we are going to create a cert manager namespace to be used::
@@ -27,11 +37,35 @@ Install Cert Manager
 Now we can add our cert-manager helm repo and update it then install it::
 
     helm repo add cert-manager https://charts.jetstack.io
+
     helm repo update
-    helm install \
-    my-cert-manager cert-manager/cert-manager \
-    --namespace cert-manager \
-    --version v1.8.0
+
+    helm install my-cert-manager cert-manager/cert-manager --namespace cert-manager --version v1.8.0
+
+If successful we should see something like this::
+
+    NAME: my-cert-manager
+    LAST DEPLOYED: Mon Nov 21 06:39:07 2022
+    NAMESPACE: cert-manager
+    STATUS: deployed
+    REVISION: 1
+    TEST SUITE: None
+    NOTES:
+    cert-manager v1.8.0 has been deployed successfully!
+
+    In order to begin issuing certificates, you will need to set up a ClusterIssuer
+    or Issuer resource (for example, by creating a 'letsencrypt-staging' issuer).
+
+    More information on the different types of issuers and how to configure them
+    can be found in our documentation:
+
+    https://cert-manager.io/docs/configuration/
+
+    For information on how to configure cert-manager to automatically provision
+    Certificates for Ingress resources, take a look at the `ingress-shim`
+    documentation:
+
+    https://cert-manager.io/docs/usage/ingress/
 
 Now verify you see the corresponding pods coming up and running::
 
