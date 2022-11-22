@@ -26,12 +26,6 @@ We should see something like this::
     customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io created
 
 
-Setup Cert Manager Namespace
-----------------------------
-Next we are going to create a cert manager namespace to be used::
-
-    kubectl create namespace cert-manager
-
 Install Cert Manager
 --------------------
 Now we can add our cert-manager helm repo and update it then install it::
