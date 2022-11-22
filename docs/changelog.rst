@@ -1,8 +1,21 @@
 **********
 Changelog
 **********
+0.8.2 (2022-11-22)
+------------------
+
+Fix
+~~~
+
+-  **k8s-namespace**: updating namespace creation to be done along with…
+   (#9)
+
+.. _section-1:
+
 0.8.1 (2022-11-20)
 ------------------
+
+.. _fix-1:
 
 Fix
 ~~~
@@ -10,7 +23,7 @@ Fix
 -  **cert-manager**: reverting cert-manager to not use terraform and
    just use helm commands
 
-.. _section-1:
+.. _section-2:
 
 0.8.0 (2022-11-20)
 ------------------
@@ -21,7 +34,7 @@ Feat
 -  **cert-manager**: starting to update cert-manager to use terraform
    (#6)
 
-.. _section-2:
+.. _section-3:
 
 0.7.0 (2022-11-20)
 ------------------
@@ -33,14 +46,14 @@ Feat
 
 -  **ci**: triggering version bump
 
-.. _fix-1:
+.. _fix-2:
 
 Fix
 ~~~
 
 -  **version-bump**: testing out the version bump
 
-.. _section-3:
+.. _section-4:
 
 0.6.0 (2022-11-20)
 ------------------
@@ -52,7 +65,7 @@ Feat
 
 -  **terraform-state**: updating terraform remote state (#3)
 
-.. _section-4:
+.. _section-5:
 
 0.5.0 (2022-11-19)
 ------------------
@@ -64,7 +77,7 @@ Feat
 
 -  **docs**: adding in docs
 
-.. _fix-2:
+.. _fix-3:
 
 Fix
 ~~~
@@ -72,21 +85,9 @@ Fix
 -  **.cz.toml**: updating it to not use the .cz.toml for the docs
    version
 
-.. _section-5:
-
-0.4.8 (2022-11-19)
-------------------
-
-.. _fix-3:
-
-Fix
-~~~
-
--  **auto-readme**: updating the auto readme workflow
-
 .. _section-6:
 
-0.4.7 (2022-11-19)
+0.4.8 (2022-11-19)
 ------------------
 
 .. _fix-4:
@@ -94,12 +95,11 @@ Fix
 Fix
 ~~~
 
--  **auto-versioning**: updating the auto versioning badge readme
-   workflow
+-  **auto-readme**: updating the auto readme workflow
 
 .. _section-7:
 
-0.4.6 (2022-11-19)
+0.4.7 (2022-11-19)
 ------------------
 
 .. _fix-5:
@@ -107,11 +107,12 @@ Fix
 Fix
 ~~~
 
--  **auto-version**: updating workflow for auto version readme badge
+-  **auto-versioning**: updating the auto versioning badge readme
+   workflow
 
 .. _section-8:
 
-0.4.5 (2022-11-19)
+0.4.6 (2022-11-19)
 ------------------
 
 .. _fix-6:
@@ -119,11 +120,11 @@ Fix
 Fix
 ~~~
 
--  **version-badge**: trying to get the auto version readme working
+-  **auto-version**: updating workflow for auto version readme badge
 
 .. _section-9:
 
-0.4.4 (2022-11-18)
+0.4.5 (2022-11-19)
 ------------------
 
 .. _fix-7:
@@ -131,12 +132,11 @@ Fix
 Fix
 ~~~
 
--  **github-actions**: testing out auto updating readme with version
-   badge
+-  **version-badge**: trying to get the auto version readme working
 
 .. _section-10:
 
-0.4.3 (2022-11-18)
+0.4.4 (2022-11-18)
 ------------------
 
 .. _fix-8:
@@ -144,11 +144,12 @@ Fix
 Fix
 ~~~
 
--  **github-actions**: testing a change to fix readme
+-  **github-actions**: testing out auto updating readme with version
+   badge
 
 .. _section-11:
 
-0.4.2 (2022-11-18)
+0.4.3 (2022-11-18)
 ------------------
 
 .. _fix-9:
@@ -156,12 +157,11 @@ Fix
 Fix
 ~~~
 
--  **github-actions**: updating workflow for auto version badge in
-   readme
+-  **github-actions**: testing a change to fix readme
 
 .. _section-12:
 
-0.4.1 (2022-11-18)
+0.4.2 (2022-11-18)
 ------------------
 
 .. _fix-10:
@@ -169,10 +169,23 @@ Fix
 Fix
 ~~~
 
+-  **github-actions**: updating workflow for auto version badge in
+   readme
+
+.. _section-13:
+
+0.4.1 (2022-11-18)
+------------------
+
+.. _fix-11:
+
+Fix
+~~~
+
 -  **github-actions**: updating to try and get auto version badge
    working
 
-.. _section-13:
+.. _section-14:
 
 0.4.0 (2022-11-18)
 ------------------
@@ -184,7 +197,7 @@ Feat
 
 -  **commitizen**: testing a version bump
 
-.. _section-14:
+.. _section-15:
 
 0.3.0 (2022-11-18)
 ------------------
@@ -196,7 +209,7 @@ Feat
 
 -  **version-badge**: working on ci for auto version badge in readme
 
-.. _fix-11:
+.. _fix-12:
 
 Fix
 ~~~
@@ -204,7 +217,7 @@ Fix
 -  **version-badge**: trying to get the version badge in readme update
    working
 
-.. _section-15:
+.. _section-16:
 
 0.2.0 (2022-11-18)
 ------------------
@@ -216,7 +229,7 @@ Feat
 
 -  **auto-version-badge**: trying to get the readme push back with badge
 
-.. _section-16:
+.. _section-17:
 
 0.1.0 (2022-11-18)
 ------------------
@@ -230,26 +243,26 @@ Feat
 -  **version-badge**: updating the ci to auto update the version badge
    in the readme and push it back to the repo
 
-.. _fix-12:
+.. _fix-13:
 
 Fix
 ~~~
 
 -  **github-actions**: fixing some ci issues
 
-.. _section-17:
+.. _section-18:
 
 0.0.3 (2022-11-18)
 ------------------
 
-.. _fix-13:
+.. _fix-14:
 
 Fix
 ~~~
 
 -  **cleanup**: updating the code and some workflows (#1)
 
-.. _section-18:
+.. _section-19:
 
 0.0.2 (2022-11-18)
 ------------------
@@ -259,7 +272,7 @@ Refactor
 
 -  **lke**: updating lke outputs to be their own file
 
-.. _section-19:
+.. _section-20:
 
 0.0.1 (2022-11-18)
 ------------------
@@ -275,7 +288,7 @@ Feat
 -  **dns**: adding in dns stuff for linode for ingress dns routing
 -  **ingress**: adding in ingress
 
-.. _fix-14:
+.. _fix-15:
 
 Fix
 ~~~
