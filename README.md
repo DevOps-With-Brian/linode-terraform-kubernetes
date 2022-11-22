@@ -44,3 +44,6 @@ pip install -r doc_requirements.txt
 Then you can run `make html` to build the docs which will then be located in the `docs/_build` dir.
 
 Latest version of docs can be found [Here](https://linode-terraform-kubernetes.readthedocs.io/en/latest/)
+
+# Github Pages
+If you want to use the same Github pages custom domain with your setup like this repo does, check out [GitHub Pages Docs](https://pages.github.com/) on setting up your repo.
