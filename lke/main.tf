@@ -27,6 +27,11 @@ provider "helm" {
   }
 }
 
+provider "kubernetes" {
+  config_path = "kube-config"
+  
+}
+
 resource "linode_lke_cluster" "linode_lke" {
     label       = var.label
     k8s_version = var.k8s_version
@@ -40,6 +45,13 @@ resource "linode_lke_cluster" "linode_lke" {
             count = pool.value["count"]
         }
     }
+}
+
+resource "kubernetes_namespace" "cert_manager" {
+  depends_on   = [local_file.kubeconfig]
+  metadata {
+    name = "cert-manager"
+  }
 }
 
 resource "helm_release" "ingress-nginx" {
