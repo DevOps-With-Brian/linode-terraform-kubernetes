@@ -1,3 +1,9 @@
+## 0.8.2 (2022-11-22)
+
+### Fix
+
+- **k8s-namespace**: updating namespace creation to be done along with… (#9)
+
 ## 0.8.1 (2022-11-20)
 
 ### Fix
